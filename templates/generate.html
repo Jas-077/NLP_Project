@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/gen.css') }}">
+</head>
+<body>
+    <div id="ocean">
+
+    </div>
+    <div class="lyr">
+    {% if pred %}
+    <h3>Your Song lyrics are:</h3>
+    <p>{{orig}}</p>
+    <h3>Generated lyrics are:</h3>
+    <p>{{pred}}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
+<script type=text/javascript src="{{url_for('static', filename='js/main.js') }}"></script>
