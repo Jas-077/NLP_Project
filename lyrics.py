@@ -1,18 +1,11 @@
 import pandas as pd
 import tensorflow as tf
 import tensorflow.keras as keras 
-from tensorflow.keras.preprocessing.text import one_hot
-from keras.layers import Embedding,LSTM,Dense,Dropout,BatchNormalization
 from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
 from keras.models import Sequential
 from keras.utils import np_utils
 import numpy as np
-import sklearn
-from sklearn.model_selection import train_test_split
-import numpy
-from sklearn.preprocessing import OneHotEncoder
-from tensorflow.keras.callbacks import TensorBoard, ModelCheckpoint
 from keras.models import load_model
 import glob 
 import nltk
@@ -82,12 +75,6 @@ def pre(seed, no_words):
     tokenizer.fit_on_texts(all_sent)
     sequences = tokenizer.texts_to_sequences(all_sent)
     sequences = np.array(sequences) 
-    j = 0
-    for i in tokenizer.word_index.items():
-        print(i)
-        j+=1
-        if j ==10:
-            break
         
     voc_size = len(tokenizer.word_index) +1
     X = []
